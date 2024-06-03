@@ -19,7 +19,7 @@ const Hero = () => {
   return (
     <>
       <StyledHero>
-        <Container>
+        <Container maxWidth='lg'>
 
 
           <Grid container spacing={2}>
@@ -31,12 +31,28 @@ const Hero = () => {
             <Grid item xs={12} md={8}>
               <Typography color='primary' variant='h1' textAlign='center'>Diego Ramon</Typography>
               <Typography color='primary' variant='h2' textAlign='center'>I'm Software Engineer</Typography>
-              <Button>
-              <GitHubIcon/>
-                 GitHub</Button>
-              <Button>
-                <LinkedInIcon/> 
-                    Linkedin</Button>
+
+              <Grid container display='flex' justifyContent='center'>
+
+                <Grid item xs={12} md={4} display='flex' justifyContent='center'>
+                <Button>
+                   <GitHubIcon/>
+                    GitHub
+                </Button>
+                </Grid>
+
+                <Grid item xs={12} md={4} display='flex' justifyContent='center'>
+                <Button>
+                    <LinkedInIcon/> 
+                    Linkedin
+                </Button>
+                </Grid>
+
+              </Grid>
+
+
+             
+              
             </Grid>
 
           </Grid>

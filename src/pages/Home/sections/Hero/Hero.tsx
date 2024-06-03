@@ -14,24 +14,36 @@ const Hero = () => {
     display: "flex",
     alignItems: "center",
     overflow: "hidden", 
-    [theme.breakpoints.down('sm')]: {
+
+    [theme.breakpoints.down('sm')]: {  //MOBILE
       padding: theme.spacing(2),
+      
+    },
+    [theme.breakpoints.down('xs')]: {  //MOBILE
+      padding: theme.spacing(2),
+     
     },
   }));
 
   const StyledImg = styled("img")(({ theme }) => ({
-    width: "80%",
+    width: "75%",
     borderRadius: "50%",
     border: `1px solid ${theme.palette.primary.contrastText}`,
-    [theme.breakpoints.down('sm')]: {
+    
+
+
+    [theme.breakpoints.down('sm')]: { //MOBILE
       width: "60%",
       margin: theme.spacing(2, 0),
+      
     },
   }));
 
   const StyledTypography = styled(Typography)(({ theme }) => ({
+    
     [theme.breakpoints.down('sm')]: {
       fontSize: '1.5rem',
+     
     },
   }));
 
@@ -81,7 +93,7 @@ const Hero = () => {
                   display="flex"
                   justifyContent="center"
                 >
-                  <StyledButton>
+                  <StyledButton onClick={()=> console.log("github")}>
                     <GitHubIcon />
                     <Typography>GitHub</Typography>
                   </StyledButton>
@@ -94,7 +106,7 @@ const Hero = () => {
                   display="flex"
                   justifyContent="center"
                 >
-                  <StyledButton>
+                  <StyledButton onClick={()=> console.log("linkedln")} >
                     <LinkedInIcon />
                     <Typography>Linkedln</Typography>
                   </StyledButton>

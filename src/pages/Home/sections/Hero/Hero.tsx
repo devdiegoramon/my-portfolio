@@ -9,11 +9,11 @@ import { AnimatedBackground } from "../../../../components/AnimatedBackground/An
 
 const Hero = () => {
   const StyledHero = styled("div")(({ theme }) => ({
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.secondary.main,
     minHeight: "100vh",
     display: "flex",
     alignItems: "center",
-    overflow: "hidden", // Adicionado overflow hidden para remover qualquer margem extra
+    overflow: "hidden", 
     [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(2),
     },

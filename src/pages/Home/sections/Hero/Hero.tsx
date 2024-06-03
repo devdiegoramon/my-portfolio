@@ -59,78 +59,73 @@ const Hero = () => {
   }));
 
   return (
-    <>
-      <StyledHero>
-        <Container maxWidth="lg">
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={5}>
-              <Box position="relative">
-                <Box position="absolute" width={"150%"} top={-100} right={0}>
-                  <AnimatedBackground />
-                </Box>
-                <Box position="relative" textAlign="center">
-                  <StyledImg src={Avatar} />
-                </Box>
+    <StyledHero>
+      <Container maxWidth="lg">
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={5}>
+            <Box position="relative">
+              <Box position="absolute" width={"150%"} top={-100} right={0}>
+                <AnimatedBackground />
               </Box>
-            </Grid>
+              <Box position="relative" textAlign="center">
+                <StyledImg src={Avatar} />
+              </Box>
+            </Box>
+          </Grid>
 
-            <Grid item xs={12} md={7}>
-              <StyledTypography
-                color="primary.contrastText"
-                variant="h1"
-                textAlign="center"
-              >
-                Diego Ramon
-              </StyledTypography>
-              <StyledTypography
-                color="primary.contrastText"
-                variant="h2"
-                textAlign="center"
-              >
-                I'm Software Engineer
-              </StyledTypography>
+          <Grid item xs={12} md={7}>
+            <StyledTypography
+              color="primary.contrastText"
+              variant="h1"
+              textAlign="center"
+            >
+              Diego Ramon
+            </StyledTypography>
+            <StyledTypography
+              color="primary.contrastText"
+              variant="h2"
+              textAlign="center"
+            >
+              I'm Software Engineer
+            </StyledTypography>
 
-              <Grid
-                container
-                display="flex"
-                justifyContent="center"
-                spacing={2}
-                pt={3}
-              >
-                <Grid
-                  item
-                  xs={12}
-                  md={4}
-                  display="flex"
-                  justifyContent="center"
+            <Grid
+              container
+              display="flex"
+              justifyContent="center"
+              spacing={2}
+              pt={3}
+            >
+              <Grid item xs={12} md={4} display="flex" justifyContent="center">
+                <StyledButton
+                  onClick={() => window.open("https://github.com", "_blank")}
                 >
-                  <StyledButton onClick={() => window.open("https://github.com/devdiegoramon", "_blank")}>
-                    <GitHubIcon />
-                    <Typography>GitHub</Typography>
-                  </StyledButton>
-                </Grid>
+                  <GitHubIcon />
+                  <Typography>GitHub</Typography>
+                </StyledButton>
+              </Grid>
 
-                <Grid
-                  item
-                  xs={12}
-                  md={4}
-                  display="flex"
-                  justifyContent="center"
+              <Grid item xs={12} md={4} display="flex" justifyContent="center">
+                <StyledButton
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/sdiegoramon",
+                      "_blank"
+                    )
+                  }
                 >
-                  <StyledButton onClick={() => window.open("https://www.linkedin.com/in/sdiegoramon", "_blank")}>
-                    <LinkedInIcon />
-                    <Typography>LinkedIn</Typography>
-                  </StyledButton>
-                </Grid>
+                  <LinkedInIcon />
+                  <Typography>LinkedIn</Typography>
+                </StyledButton>
               </Grid>
             </Grid>
           </Grid>
-        </Container>
-        <StyledIconContainer>
-          <StyledIcon />
-        </StyledIconContainer>
-      </StyledHero>
-    </>
+        </Grid>
+      </Container>
+      <StyledIconContainer>
+        <StyledIcon />
+      </StyledIconContainer>
+    </StyledHero>
   );
 };
 

@@ -16,15 +16,7 @@ const Hero = () => {
     alignItems: "center",
     position: "relative",
     overflow: "hidden",
-
-    [theme.breakpoints.down("sm")]: {
-      //MOBILE
-      padding: theme.spacing(2),
-    },
-    [theme.breakpoints.down("xs")]: {
-      //MOBILE
-      padding: theme.spacing(2),
-    },
+    padding: theme.spacing(2),
   }));
 
   const StyledImg = styled("img")(({ theme }) => ({
@@ -33,7 +25,6 @@ const Hero = () => {
     border: `1px solid ${theme.palette.primary.contrastText}`,
 
     [theme.breakpoints.down("sm")]: {
-      //MOBILE
       width: "60%",
       margin: theme.spacing(2, 0),
     },
@@ -48,14 +39,16 @@ const Hero = () => {
   const StyledIconContainer = styled(Box)(({ theme }) => ({
     position: "absolute",
     bottom: theme.spacing(2),
-    width: "100%",
+    left: 0,
+    right: 0,
     display: "flex",
     justifyContent: "center",
+    alignItems: "center",
   }));
 
   const StyledIcon = styled(KeyboardDoubleArrowDownIcon)(({ theme }) => ({
-    fontSize: "3rem", // Tamanho aumentado
-    color: theme.palette.primary.contrastText, // Cor do ícone
+    fontSize: "3rem",
+    color: theme.palette.primary.contrastText,
   }));
 
   return (
@@ -96,24 +89,27 @@ const Hero = () => {
               spacing={2}
               pt={3}
             >
-              <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                <StyledButton
-                  onClick={() => window.open("https://github.com", "_blank")}
-                >
+              <Grid
+                item
+                xs={12}
+                md={4}
+                display="flex"
+                justifyContent="center"
+              >
+                <StyledButton onClick={() => window.open("https://github.com", "_blank")}>
                   <GitHubIcon />
                   <Typography>GitHub</Typography>
                 </StyledButton>
               </Grid>
 
-              <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                <StyledButton
-                  onClick={() =>
-                    window.open(
-                      "https://www.linkedin.com/in/sdiegoramon",
-                      "_blank"
-                    )
-                  }
-                >
+              <Grid
+                item
+                xs={12}
+                md={4}
+                display="flex"
+                justifyContent="center"
+              >
+                <StyledButton onClick={() => window.open("https://www.linkedin.com/in/sdiegoramon", "_blank")}>
                   <LinkedInIcon />
                   <Typography>LinkedIn</Typography>
                 </StyledButton>

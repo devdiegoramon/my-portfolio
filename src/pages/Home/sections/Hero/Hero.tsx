@@ -96,7 +96,7 @@ const Hero = () => {
                 display="flex"
                 justifyContent="center"
               >
-                <StyledButton onClick={() => window.open("https://github.com", "_blank")}>
+                <StyledButton onClick={() => window.open("https://github.com/devdiegoramon", "_blank")}>
                   <GitHubIcon />
                   <Typography>GitHub</Typography>
                 </StyledButton>

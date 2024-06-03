@@ -58,7 +58,8 @@ const Hero = () => {
                 container
                 display="flex"
                 justifyContent="center"
-                spacing={4}
+                spacing={2}
+                pt={3}
               >
                 <Grid
                   item

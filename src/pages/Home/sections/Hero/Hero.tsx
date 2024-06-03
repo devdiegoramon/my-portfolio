@@ -10,15 +10,29 @@ import { AnimatedBackground } from "../../../../components/AnimatedBackground/An
 const Hero = () => {
   const StyledHero = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
-    height: "100vh",
+    minHeight: "100vh",
     display: "flex",
     alignItems: "center",
+    overflow: "hidden", // Adicionado overflow hidden para remover qualquer margem extra
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(2),
+    },
   }));
 
   const StyledImg = styled("img")(({ theme }) => ({
     width: "80%",
     borderRadius: "50%",
     border: `1px solid ${theme.palette.primary.contrastText}`,
+    [theme.breakpoints.down('sm')]: {
+      width: "60%",
+      margin: theme.spacing(2, 0),
+    },
+  }));
+
+  const StyledTypography = styled(Typography)(({ theme }) => ({
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.5rem',
+    },
   }));
 
   return (
@@ -31,28 +45,27 @@ const Hero = () => {
                 <Box position="absolute" width={"150%"} top={-100} right={0}>
                   <AnimatedBackground />
                 </Box>
-                <Box position='relative' textAlign='center'>
-                <StyledImg src={Avatar} />
+                <Box position="relative" textAlign="center">
+                  <StyledImg src={Avatar} />
                 </Box>
               </Box>
-             
             </Grid>
 
             <Grid item xs={12} md={7}>
-              <Typography
+              <StyledTypography
                 color="primary.contrastText"
                 variant="h1"
                 textAlign="center"
               >
                 Diego Ramon
-              </Typography>
-              <Typography
+              </StyledTypography>
+              <StyledTypography
                 color="primary.contrastText"
                 variant="h2"
                 textAlign="center"
               >
                 I'm Software Engineer
-              </Typography>
+              </StyledTypography>
 
               <Grid
                 container

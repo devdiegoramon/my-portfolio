@@ -1,4 +1,4 @@
-import { Box, Container, Grid, SvgIcon, Typography, styled } from "@mui/material";
+import { Box, Container, Grid, Typography, styled } from "@mui/material";
 import Avatar from "../../../../assets/images/pessoas/eu/minhafoto-min.png";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 

@@ -1,5 +1,6 @@
-import { Box, Container, Grid, Typography, styled } from "@mui/material";
+import { Box, Container, Grid, SvgIcon, Typography, styled } from "@mui/material";
 import Avatar from "../../../../assets/images/pessoas/eu/minhafoto-min.png";
+import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
 // ICONES
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -13,15 +14,16 @@ const Hero = () => {
     minHeight: "100vh",
     display: "flex",
     alignItems: "center",
-    overflow: "hidden", 
+    position: "relative",
+    overflow: "hidden",
 
-    [theme.breakpoints.down('sm')]: {  //MOBILE
+    [theme.breakpoints.down("sm")]: {
+      //MOBILE
       padding: theme.spacing(2),
-      
     },
-    [theme.breakpoints.down('xs')]: {  //MOBILE
+    [theme.breakpoints.down("xs")]: {
+      //MOBILE
       padding: theme.spacing(2),
-     
     },
   }));
 
@@ -29,22 +31,31 @@ const Hero = () => {
     width: "75%",
     borderRadius: "50%",
     border: `1px solid ${theme.palette.primary.contrastText}`,
-    
 
-
-    [theme.breakpoints.down('sm')]: { //MOBILE
+    [theme.breakpoints.down("sm")]: {
+      //MOBILE
       width: "60%",
       margin: theme.spacing(2, 0),
-      
     },
   }));
 
   const StyledTypography = styled(Typography)(({ theme }) => ({
-    
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '1.5rem',
-     
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.5rem",
     },
+  }));
+
+  const StyledIconContainer = styled(Box)(({ theme }) => ({
+    position: "absolute",
+    bottom: theme.spacing(2),
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+  }));
+
+  const StyledIcon = styled(KeyboardDoubleArrowDownIcon)(({ theme }) => ({
+    fontSize: "3rem", // Tamanho aumentado
+    color: theme.palette.primary.contrastText, // Cor do ícone
   }));
 
   return (
@@ -93,7 +104,7 @@ const Hero = () => {
                   display="flex"
                   justifyContent="center"
                 >
-                  <StyledButton onClick={()=> console.log("github")}>
+                  <StyledButton onClick={() => window.open("https://github.com/devdiegoramon", "_blank")}>
                     <GitHubIcon />
                     <Typography>GitHub</Typography>
                   </StyledButton>
@@ -106,15 +117,18 @@ const Hero = () => {
                   display="flex"
                   justifyContent="center"
                 >
-                  <StyledButton onClick={()=> console.log("linkedln")} >
+                  <StyledButton onClick={() => window.open("https://www.linkedin.com/in/sdiegoramon", "_blank")}>
                     <LinkedInIcon />
-                    <Typography>Linkedln</Typography>
+                    <Typography>LinkedIn</Typography>
                   </StyledButton>
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
         </Container>
+        <StyledIconContainer>
+          <StyledIcon />
+        </StyledIconContainer>
       </StyledHero>
     </>
   );

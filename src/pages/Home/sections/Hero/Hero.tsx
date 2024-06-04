@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography, styled } from "@mui/material";
+import { Box, Button, Container, Grid, Typography, styled } from "@mui/material";
 import Avatar from "../../../../assets/images/pessoas/eu/minhafoto-min.png";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
@@ -96,10 +96,13 @@ const Hero = () => {
                 display="flex"
                 justifyContent="center"
               >
+
+                <Button>
                 <StyledButton onClick={() => window.open("https://github.com/devdiegoramon", "_blank")}>
                   <GitHubIcon />
                   <Typography>GitHub</Typography>
                 </StyledButton>
+                </Button>
               </Grid>
 
               <Grid
@@ -109,10 +112,16 @@ const Hero = () => {
                 display="flex"
                 justifyContent="center"
               >
+
+
+                <Button> 
                 <StyledButton onClick={() => window.open("https://www.linkedin.com/in/sdiegoramon", "_blank")}>
                   <LinkedInIcon />
                   <Typography>LinkedIn</Typography>
                 </StyledButton>
+                </Button>
+
+
               </Grid>
             </Grid>
           </Grid>

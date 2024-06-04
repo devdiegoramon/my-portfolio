@@ -1,7 +1,7 @@
 import Avatar from "../../../../assets/images/pessoas/eu/minhafoto-min.png";
 
 // Material UI
-import { Box, Container, Grid, Typography, styled, IconButton, Button } from "@mui/material";
+import { Box, Container, Grid, Typography, styled, IconButton, Button, Link } from "@mui/material";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -68,7 +68,6 @@ const About = () => {
     marginTop: theme.spacing(4),
     gap: theme.spacing(4),
     [theme.breakpoints.down("sm")]: {
-      marginTop: theme.spacing(8),
       flexDirection: "column",
       alignItems: "center",
     },
@@ -78,11 +77,12 @@ const About = () => {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
     padding: theme.spacing(2),
     borderRadius: theme.shape.borderRadius,
     '&:hover': {
-      backgroundColor: theme.palette.secondary.dark,
+      backgroundColor: theme.palette.primary.dark,
     },
   }));
 
@@ -121,29 +121,22 @@ const About = () => {
             </InfoTypography>
             
             <ButtonContainer>
-              <StyledButton
-                component="a"
-                href="https://github.com/devdiegoramon/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <StyledIconButton>
-                  <GitHubIcon />
-                </StyledIconButton>
-                <Typography variant="body1">GitHub</Typography>
-              </StyledButton>
-
-              <StyledButton
-                component="a"
-                href="https://www.linkedin.com/in/sdiegoramon/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <StyledIconButton>
-                  <LinkedInIcon />
-                </StyledIconButton>
-                <Typography variant="body1">LinkedIn</Typography>
-              </StyledButton>
+              <Link href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer">
+                <StyledButton>
+                  <StyledIconButton>
+                    <GitHubIcon />
+                  </StyledIconButton>
+                  <Typography variant="body1">GitHub</Typography>
+                </StyledButton>
+              </Link>
+              <Link href="https://linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer">
+                <StyledButton>
+                  <StyledIconButton>
+                    <LinkedInIcon />
+                  </StyledIconButton>
+                  <Typography variant="body1">LinkedIn</Typography>
+                </StyledButton>
+              </Link>
             </ButtonContainer>
 
             <Grid

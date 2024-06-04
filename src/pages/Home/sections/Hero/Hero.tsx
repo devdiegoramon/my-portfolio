@@ -1,12 +1,11 @@
-import { Box, Button, Container, Grid, Typography, styled } from "@mui/material";
 import Avatar from "../../../../assets/images/pessoas/eu/minhafoto-min.png";
+
+// Material UI
+import { Box, Container, Grid, Typography, styled } from "@mui/material";
+import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
-// ICONES
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import StyledButton from "../../../../components/StyledButton/StyledButton";
-import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
+// INICIO DO CÓDIGO
 
 const Hero = () => {
   const StyledHero = styled("div")(({ theme }) => ({
@@ -16,14 +15,13 @@ const Hero = () => {
     alignItems: "center",
     position: "relative",
     overflow: "hidden",
-    padding: theme.spacing(2),
+    padding: theme.spacing(4),
   }));
 
   const StyledImg = styled("img")(({ theme }) => ({
     width: "75%",
     borderRadius: "50%",
     border: `1px solid ${theme.palette.primary.contrastText}`,
-
     [theme.breakpoints.down("sm")]: {
       width: "60%",
       margin: theme.spacing(2, 0),
@@ -36,19 +34,40 @@ const Hero = () => {
     },
   }));
 
+  const NameTypography = styled(StyledTypography)(({ theme }) => ({
+    marginBottom: theme.spacing(1),
+  }));
+
+  const JobTitleTypography = styled(StyledTypography)(() => ({
+    marginTop: 0,
+  }));
+
   const StyledIconContainer = styled(Box)(({ theme }) => ({
     position: "absolute",
-    bottom: theme.spacing(2),
-    left: 0,
-    right: 0,
+    bottom: theme.spacing(8),
+    left: "50%",
+    transform: "translateX(-50%)",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
   }));
 
   const StyledIcon = styled(KeyboardDoubleArrowDownIcon)(({ theme }) => ({
-    fontSize: "3rem",
+    fontSize: "4rem",
     color: theme.palette.primary.contrastText,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "3rem",
+    },
+  }));
+
+  const StyledGrid = styled(Grid)(({ theme }) => ({
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100%",
+    },
   }));
 
   return (
@@ -66,21 +85,21 @@ const Hero = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={7}>
-            <StyledTypography
+          <StyledGrid item xs={12} md={7}>
+            <NameTypography
               color="primary.contrastText"
               variant="h1"
               textAlign="center"
             >
               Diego Ramon
-            </StyledTypography>
-            <StyledTypography
+            </NameTypography>
+            <JobTitleTypography
               color="primary.contrastText"
               variant="h2"
               textAlign="center"
             >
               I'm Software Engineer
-            </StyledTypography>
+            </JobTitleTypography>
 
             <Grid
               container
@@ -89,42 +108,8 @@ const Hero = () => {
               spacing={2}
               pt={3}
             >
-              <Grid
-                item
-                xs={12}
-                md={4}
-                display="flex"
-                justifyContent="center"
-              >
-
-                <Button>
-                <StyledButton onClick={() => window.open("https://github.com/devdiegoramon", "_blank")}>
-                  <GitHubIcon />
-                  <Typography>GitHub</Typography>
-                </StyledButton>
-                </Button>
-              </Grid>
-
-              <Grid
-                item
-                xs={12}
-                md={4}
-                display="flex"
-                justifyContent="center"
-              >
-
-
-                <Button> 
-                <StyledButton onClick={() => window.open("https://www.linkedin.com/in/sdiegoramon", "_blank")}>
-                  <LinkedInIcon />
-                  <Typography>LinkedIn</Typography>
-                </StyledButton>
-                </Button>
-
-
-              </Grid>
             </Grid>
-          </Grid>
+          </StyledGrid>
         </Grid>
       </Container>
       <StyledIconContainer>

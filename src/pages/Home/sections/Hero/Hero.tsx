@@ -32,8 +32,8 @@ const Hero = () => {
     width: "70%",
     borderRadius: "50%",
     border: `1px solid ${theme.palette.primary.contrastText}`,
-    marginTop: theme.spacing(12), // margem superior
-    marginBottom: theme.spacing(8), // margem inferior
+   
+    marginBottom: theme.spacing(10), // margem inferior
     [theme.breakpoints.down("sm")]: {
       width: "60%",
       margin: theme.spacing(2, 0),

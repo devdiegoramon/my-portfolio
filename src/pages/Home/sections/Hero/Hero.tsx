@@ -20,11 +20,11 @@ const Hero = () => {
     alignItems: "center",
     position: "relative",
     overflow: "hidden",
-    padding: theme.spacing(8), // Ajuste de espaçamento interno
-    paddingBottom: theme.spacing(16), // Ajuste de margem inferior
+    padding: theme.spacing(8), // espaçamento interno
+    paddingBottom: theme.spacing(16), // margem inferior
     [theme.breakpoints.down("sm")]: {
-      padding: theme.spacing(4), // Ajuste de espaçamento interno
-      paddingBottom: theme.spacing(12), // Ajuste de margem inferior
+      padding: theme.spacing(4), // espaçamento interno
+      paddingBottom: theme.spacing(12), // margem inferior
     },
   }));
 
@@ -32,8 +32,8 @@ const Hero = () => {
     width: "70%",
     borderRadius: "50%",
     border: `1px solid ${theme.palette.primary.contrastText}`,
-    marginTop: theme.spacing(12), // Ajuste de margem superior
-    marginBottom: theme.spacing(8), // Ajuste de margem inferior
+    marginTop: theme.spacing(12), // margem superior
+    marginBottom: theme.spacing(8), // margem inferior
     [theme.breakpoints.down("sm")]: {
       width: "60%",
       margin: theme.spacing(2, 0),
@@ -42,9 +42,9 @@ const Hero = () => {
 
   const StyledTypography = styled(Typography)(({ theme }) => ({
     fontSize: "0.5rem",
-    marginTop: theme.spacing(4), // Ajuste de margem superior
-    marginBottom: theme.spacing(4), // Ajuste de margem inferior
-    lineHeight: "1.6", // Ajuste de espaçamento entre linhas
+    marginTop: theme.spacing(4), // margem superior
+    marginBottom: theme.spacing(4), // margem inferior
+    lineHeight: "1.6", // espaçamento entre linhas
     [theme.breakpoints.down("sm")]: {
       fontSize: "1.5rem",
     },
@@ -62,14 +62,14 @@ const Hero = () => {
 
   const StyledIconContainer = styled(Box)(({ theme }) => ({
     position: "absolute",
-    bottom: theme.spacing(12), // Ajuste de margem inferior
+    bottom: theme.spacing(12), // margem inferior
     left: "50%",
     transform: "translateX(-50%)",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     [theme.breakpoints.down("sm")]: {
-      bottom: theme.spacing(8), // Ajuste de margem inferior
+      bottom: theme.spacing(8), // margem inferior
     },
   }));
 

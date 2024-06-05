@@ -15,8 +15,6 @@ import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrow
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
-// INICIO DO CÓDIGO
-
 const About = () => {
   const StyledAbout = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.secondary.main,
@@ -25,6 +23,7 @@ const About = () => {
     position: "relative",
     overflow: "hidden",
     padding: theme.spacing(4),
+    paddingBottom: theme.spacing(12), // Ajuste de margem inferior
   }));
 
   const StyledImg = styled("img")(({ theme }) => ({
@@ -40,6 +39,7 @@ const About = () => {
   }));
 
   const StyledTypography = styled(Typography)(({ theme }) => ({
+    fontSize: "0.5rem",
     [theme.breakpoints.down("sm")]: {
       fontSize: "1.5rem",
     },
@@ -56,14 +56,14 @@ const About = () => {
 
   const StyledIconContainer = styled(Box)(({ theme }) => ({
     position: "absolute",
-    bottom: theme.spacing(8),
+    bottom: theme.spacing(10), // SEMPRE ALINHAR COM HERO
     left: "50%",
     transform: "translateX(-50%)",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     [theme.breakpoints.down("sm")]: {
-      bottom: theme.spacing(4), 
+      bottom: theme.spacing(6),
     },
   }));
 
@@ -79,12 +79,12 @@ const About = () => {
     display: "flex",
     justifyContent: "center",
     marginTop: theme.spacing(2),
-    gap: theme.spacing(2),
+    gap: theme.spacing(2), // Espaçamento entre os botões
     [theme.breakpoints.down("sm")]: {
-      flexDirection: "column",
+      flexDirection: "row",
       alignItems: "center",
-      marginTop: theme.spacing(1), // Ajuste o espaçamento superior em dispositivos móveis
-      gap: theme.spacing(1), // Ajuste o espaçamento entre os botões em dispositivos móveis
+      marginTop: theme.spacing(1),
+      gap: theme.spacing(1),
     },
   }));
 
@@ -105,7 +105,7 @@ const About = () => {
     "& .MuiTypography-root": {
       fontSize: "1.5rem",
       [theme.breakpoints.down("sm")]: {
-        fontSize: "1.2rem", // Ajuste o tamanho do texto em dispositivos móveis
+        fontSize: "1.2rem",
       },
     },
   }));
@@ -114,7 +114,7 @@ const About = () => {
     color: theme.palette.primary.contrastText,
     fontSize: "3rem",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "2rem", // Ajuste o tamanho do ícone em dispositivos móveis
+      fontSize: "2rem",
     },
   }));
 

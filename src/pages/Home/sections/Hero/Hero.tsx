@@ -5,8 +5,6 @@ import { Box, Container, Grid, Typography, styled } from "@mui/material";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
-// INICIO DO CÓDIGO
-
 const Hero = () => {
   const StyledHero = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.secondary.main,
@@ -15,13 +13,20 @@ const Hero = () => {
     alignItems: "center",
     position: "relative",
     overflow: "hidden",
-    padding: theme.spacing(4),
+    padding: theme.spacing(8), // Ajuste de espaçamento interno
+    paddingBottom: theme.spacing(16), // Ajuste de margem inferior
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(4), // Ajuste de espaçamento interno
+      paddingBottom: theme.spacing(12), // Ajuste de margem inferior
+    },
   }));
 
   const StyledImg = styled("img")(({ theme }) => ({
-    width: "75%",
+    width: "70%",
     borderRadius: "50%",
     border: `1px solid ${theme.palette.primary.contrastText}`,
+    marginTop: theme.spacing(12), // Ajuste de margem superior
+    marginBottom: theme.spacing(8), // Ajuste de margem inferior
     [theme.breakpoints.down("sm")]: {
       width: "60%",
       margin: theme.spacing(2, 0),
@@ -29,13 +34,16 @@ const Hero = () => {
   }));
 
   const StyledTypography = styled(Typography)(({ theme }) => ({
+    fontSize: "0.5rem",
+    marginTop: theme.spacing(4), // Ajuste de margem superior
+    marginBottom: theme.spacing(4), // Ajuste de margem inferior
     [theme.breakpoints.down("sm")]: {
       fontSize: "1.5rem",
     },
   }));
 
   const NameTypography = styled(StyledTypography)(({ theme }) => ({
-    marginBottom: theme.spacing(1),
+    marginBottom: theme.spacing(4),
   }));
 
   const JobTitleTypography = styled(StyledTypography)(() => ({
@@ -44,14 +52,14 @@ const Hero = () => {
 
   const StyledIconContainer = styled(Box)(({ theme }) => ({
     position: "absolute",
-    bottom: theme.spacing(8),
+    bottom: theme.spacing(12), // Ajuste de margem inferior
     left: "50%",
     transform: "translateX(-50%)",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     [theme.breakpoints.down("sm")]: {
-      bottom: theme.spacing(4), 
+      bottom: theme.spacing(8), // Ajuste de margem inferior
     },
   }));
 
@@ -110,8 +118,7 @@ const Hero = () => {
               justifyContent="center"
               spacing={2}
               pt={3}
-            >
-            </Grid>
+            ></Grid>
           </StyledGrid>
         </Grid>
       </Container>

@@ -1,13 +1,7 @@
 import Avatar from "../../../../assets/images/pessoas/eu/minhafoto-min.png";
 
 // Material UI
-import {
-  Box,
-  Container,
-  Grid,
-  Typography,
-  styled 
-} from "@mui/material";
+import { Box, Container, Grid, Typography, styled } from "@mui/material";
 
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
@@ -33,18 +27,18 @@ const Hero = () => {
     borderRadius: "50%",
     border: `1px solid ${theme.palette.primary.contrastText}`,
    
-    marginBottom: theme.spacing(10), // margem inferior
+    position: "relative",
+    zIndex: 2,
     [theme.breakpoints.down("sm")]: {
       width: "60%",
-      margin: theme.spacing(2, 0),
+    
     },
   }));
 
   const StyledTypography = styled(Typography)(({ theme }) => ({
     fontSize: "0.5rem",
-    marginTop: theme.spacing(4), // margem superior
-    marginBottom: theme.spacing(4), // margem inferior
-    lineHeight: "1.6", // espaçamento entre linhas
+    marginBottom: theme.spacing(16),
+   
     [theme.breakpoints.down("sm")]: {
       fontSize: "1.5rem",
     },

@@ -37,7 +37,6 @@ const About = () => {
     width: "70%",
     borderRadius: "50%",
     border: `1px solid ${theme.palette.primary.contrastText}`,
-
     marginBottom: theme.spacing(10),
     position: "relative",
     zIndex: 2,

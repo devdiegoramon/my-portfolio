@@ -20,26 +20,35 @@ const About = () => {
     backgroundColor: theme.palette.secondary.main,
     minHeight: "100vh",
     display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
     position: "relative",
     overflow: "hidden",
-    padding: theme.spacing(4),
-    paddingBottom: theme.spacing(12), // Ajuste de margem inferior
+    padding: theme.spacing(8), // Ajuste de espaçamento interno
+    paddingBottom: theme.spacing(16), // Ajuste de margem inferior
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(4), // Ajuste de espaçamento interno
+      paddingBottom: theme.spacing(12), // Ajuste de margem inferior
+    },
   }));
 
   const StyledImg = styled("img")(({ theme }) => ({
-    width: "55%",
+    width: "70%",
     borderRadius: "50%",
     border: `1px solid ${theme.palette.primary.contrastText}`,
-    position: "relative",
-    zIndex: 2,
+    marginTop: theme.spacing(12), // Ajuste de margem superior
+    marginBottom: theme.spacing(8), // Ajuste de margem inferior
     [theme.breakpoints.down("sm")]: {
-      width: "50%",
+      width: "60%",
       margin: theme.spacing(2, 0),
     },
   }));
 
   const StyledTypography = styled(Typography)(({ theme }) => ({
     fontSize: "0.5rem",
+    marginTop: theme.spacing(4), // Ajuste de margem superior
+    marginBottom: theme.spacing(4), // Ajuste de margem inferior
     [theme.breakpoints.down("sm")]: {
       fontSize: "1.5rem",
     },
@@ -48,22 +57,25 @@ const About = () => {
   const NameTypography = styled(StyledTypography)(({ theme }) => ({
     marginBottom: theme.spacing(1),
     marginTop: theme.spacing(2),
+    textAlign: "center",
   }));
 
   const InfoTypography = styled(StyledTypography)(() => ({
     marginTop: 0,
+    marginBottom: 0,
+    textAlign: "center",
   }));
 
   const StyledIconContainer = styled(Box)(({ theme }) => ({
     position: "absolute",
-    bottom: theme.spacing(10), // SEMPRE ALINHAR COM HERO
+    bottom: theme.spacing(12), // Ajuste de margem inferior
     left: "50%",
     transform: "translateX(-50%)",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     [theme.breakpoints.down("sm")]: {
-      bottom: theme.spacing(6),
+      bottom: theme.spacing(8), // Ajuste de margem inferior
     },
   }));
 
@@ -79,12 +91,12 @@ const About = () => {
     display: "flex",
     justifyContent: "center",
     marginTop: theme.spacing(2),
-    gap: theme.spacing(2), // Espaçamento entre os botões
+    gap: theme.spacing(2), // Ajuste o espaçamento entre os botões
     [theme.breakpoints.down("sm")]: {
-      flexDirection: "row",
+      flexDirection: "row", // Ajuste a direção dos botões em dispositivos móveis
       alignItems: "center",
-      marginTop: theme.spacing(1),
-      gap: theme.spacing(1),
+      marginTop: theme.spacing(1), // Ajuste o espaçamento superior em dispositivos móveis
+      gap: theme.spacing(1), // Ajuste o espaçamento entre os botões em dispositivos móveis
     },
   }));
 
@@ -103,9 +115,9 @@ const About = () => {
       padding: theme.spacing(4),
     },
     "& .MuiTypography-root": {
-      fontSize: "1.5rem",
+      fontSize: "1rem",
       [theme.breakpoints.down("sm")]: {
-        fontSize: "1.2rem",
+        fontSize: "1rem", // Ajuste o tamanho do texto em dispositivos móveis
       },
     },
   }));
@@ -114,7 +126,7 @@ const About = () => {
     color: theme.palette.primary.contrastText,
     fontSize: "3rem",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "2rem",
+      fontSize: "2rem", // Ajuste o tamanho do ícone em dispositivos móveis
     },
   }));
 
@@ -141,14 +153,12 @@ const About = () => {
             <NameTypography
               color="primary.contrastText"
               variant="h1"
-              textAlign="center"
             >
               Diego Ramon
             </NameTypography>
             <InfoTypography
               color="primary.contrastText"
               variant="h2"
-              textAlign="center"
             >
               Where to find me?
             </InfoTypography>

@@ -1,7 +1,15 @@
 import Avatar from "../../../../assets/images/pessoas/eu/minhafoto-min.png";
 
 // Material UI
-import { Box, Container, Grid, Typography, styled, IconButton, Button, Link } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid,
+  Typography,
+  styled,
+  IconButton,
+} from "@mui/material";
+
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -23,6 +31,8 @@ const About = () => {
     width: "55%",
     borderRadius: "50%",
     border: `1px solid ${theme.palette.primary.contrastText}`,
+    position: "relative",
+    zIndex: 2,
     [theme.breakpoints.down("sm")]: {
       width: "50%",
       margin: theme.spacing(2, 0),
@@ -52,6 +62,9 @@ const About = () => {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      bottom: theme.spacing(4), 
+    },
   }));
 
   const StyledIcon = styled(KeyboardDoubleArrowDownIcon)(({ theme }) => ({
@@ -65,30 +78,44 @@ const About = () => {
   const ButtonContainer = styled(Box)(({ theme }) => ({
     display: "flex",
     justifyContent: "center",
-    marginTop: theme.spacing(4),
-    gap: theme.spacing(4),
+    marginTop: theme.spacing(2),
+    gap: theme.spacing(2),
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
       alignItems: "center",
+      marginTop: theme.spacing(1), // Ajuste o espaçamento superior em dispositivos móveis
+      gap: theme.spacing(1), // Ajuste o espaçamento entre os botões em dispositivos móveis
     },
   }));
 
-  const StyledButton = styled(Button)(({ theme }) => ({
+  const StyledButton = styled("a")(({ theme }) => ({
     display: "flex",
     flexDirection: "column",
+    textDecoration: "none",
     alignItems: "center",
-    backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
-    padding: theme.spacing(2),
+    padding: theme.spacing(3),
     borderRadius: theme.shape.borderRadius,
-    '&:hover': {
-      backgroundColor: theme.palette.primary.dark,
+    "&:hover": {
+      backgroundColor: theme.palette.secondary.dark,
+    },
+    [theme.breakpoints.up("md")]: {
+      padding: theme.spacing(4),
+    },
+    "& .MuiTypography-root": {
+      fontSize: "1.5rem",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "1.2rem", // Ajuste o tamanho do texto em dispositivos móveis
+      },
     },
   }));
 
   const StyledIconButton = styled(IconButton)(({ theme }) => ({
-    fontSize: "2rem",
     color: theme.palette.primary.contrastText,
+    fontSize: "3rem",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2rem", // Ajuste o tamanho do ícone em dispositivos móveis
+    },
   }));
 
   return (
@@ -97,7 +124,13 @@ const About = () => {
         <Grid container spacing={2}>
           <Grid item xs={12} md={5}>
             <Box position="relative" textAlign="center">
-              <Box position="absolute" width={"150%"} top={-100} right={0}>
+              <Box
+                position="absolute"
+                width={"150%"}
+                top={-100}
+                right={0}
+                zIndex={1}
+              >
                 <AnimatedBackground />
               </Box>
               <StyledImg src={Avatar} />
@@ -119,24 +152,29 @@ const About = () => {
             >
               Where to find me?
             </InfoTypography>
-            
+
             <ButtonContainer>
-              <Link href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer">
-                <StyledButton>
-                  <StyledIconButton>
-                    <GitHubIcon />
-                  </StyledIconButton>
-                  <Typography variant="body1">GitHub</Typography>
-                </StyledButton>
-              </Link>
-              <Link href="https://linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer">
-                <StyledButton>
-                  <StyledIconButton>
-                    <LinkedInIcon />
-                  </StyledIconButton>
-                  <Typography variant="body1">LinkedIn</Typography>
-                </StyledButton>
-              </Link>
+              <StyledButton
+                href="https://github.com/devdiegoramon/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <StyledIconButton>
+                  <GitHubIcon fontSize="inherit" />
+                </StyledIconButton>
+                <Typography variant="body1">GitHub</Typography>
+              </StyledButton>
+
+              <StyledButton
+                href="https://www.linkedin.com/in/sdiegoramon/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <StyledIconButton>
+                  <LinkedInIcon fontSize="inherit" />
+                </StyledIconButton>
+                <Typography variant="body1">LinkedIn</Typography>
+              </StyledButton>
             </ButtonContainer>
 
             <Grid
@@ -145,8 +183,7 @@ const About = () => {
               justifyContent="center"
               spacing={2}
               pt={3}
-            >
-            </Grid>
+            ></Grid>
           </Grid>
         </Grid>
         <StyledIconContainer>

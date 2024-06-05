@@ -50,6 +50,9 @@ const Hero = () => {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      bottom: theme.spacing(4), 
+    },
   }));
 
   const StyledIcon = styled(KeyboardDoubleArrowDownIcon)(({ theme }) => ({
